@@ -10,31 +10,40 @@ import java.util.Scanner;
 
 public class Main { // classe
     public static void main(String[] args) { // metodo
+        double rendaFamiliar, gastoComLuz, gastoComAgua, gastoComInternet, valorMensalidade;
+        int numeroDeMoradores;
 
         DespesaFamiliar despesa = new DespesaFamiliar(); // criando objeto que instancia da classe DespesaFamiliar
         Scanner scan;   // declaração do objeto da classe Scanner
 
         try {
-            scan = new Scanner(System.in); // criando objeto que instancia Scanner
+            scan = new Scanner(System.in);
+
             System.out.print("Informe a sua renda familiar: ");
-            despesa.rendaFamiliar = scan.nextDouble();
+            rendaFamiliar = scan.nextDouble();
+            despesa.rendaFamiliar = rendaFamiliar;
 
             System.out.print("Informe o número de moradores (sem contar você mesmo):  ");
-            despesa.numeroDeMoradores = scan.nextInt();
+            numeroDeMoradores = scan.nextInt();
+            despesa.numeroDeMoradores = numeroDeMoradores;
 
             System.out.print("Informe o gasto de energia: ");
-            despesa.gastoComLuz = scan.nextDouble();
+            gastoComLuz = scan.nextDouble();
+            despesa.gastoComLuz = gastoComLuz;
 
             System.out.print("Informe o gasto de água: ");
-            despesa.gastoComAgua = scan.nextDouble();
+            gastoComAgua = scan.nextDouble();
+            despesa.gastoComAgua = gastoComAgua;
 
             System.out.print("Informe o gasto de internet: ");
-            despesa.gastoComInternet = scan.nextDouble();
+            gastoComInternet = scan.nextDouble();
+            despesa.gastoComInternet = gastoComInternet;
 
             System.out.print("Informe o valor mensal da academia: ");
-            despesa.valorMensalidadeDaAcademia = scan.nextDouble();
+            valorMensalidade = scan.nextDouble();
+            despesa.valorMensalidadeDaAcademia = valorMensalidade;
 
-            System.out.printf("Renda familiar: R$ %.3f \nTotal de Despesas: R$ %.3f \nRenda Liquida: R$ %.3f ", despesa.rendaFamiliar, despesa.calcularTotalDeDespesas(), despesa.calcularRendaFamiliarLiquida());
+            System.out.printf("Renda familiar: R$ %.3f \nTotal de Despesas: R$ %.3f \nRenda Liquida: R$ %.3f ", rendaFamiliar, despesa.calcularTotalDeDespesas(), despesa.calcularRendaFamiliarLiquida());
 
         } catch (Exception e) {
             System.out.println("Formato de número incorreto");
